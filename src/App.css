@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --primary-color: #4285f4;
+  --secondary-color: #eef4f0;
+  --rounded: 5px;
 }
 
 .logo {
@@ -43,12 +46,15 @@
 
 .wrapper {
   width: 100%;
-  max-width: 600px;
+  width: 600px;
   margin: 0 auto;
 }
 
 .complain-form {
   margin-bottom: 20px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  /* border-radius: var(--rounded); */
 }
 
 .complain-form input,
@@ -64,11 +70,121 @@
 }
 
 .error-message {
-  color: red;
-  margin-top: 10px;
+  display: block;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem;
+  text-align: start;
+  color: #fff;
+  background-color: #dc3545;
+  border-left: 4px solid #a71d2a;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: var(--rounded);
 }
 
 .complain-item {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  padding: 5px 20px;
+  background-color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background-color: white;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+input:disabled,
+textarea:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.btn {
+  padding: 10px 20px !important;
+  font-size: 16px;
+  border: none;
+  border-radius: var(--rounded);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  color: white;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.loader-container {
+  position: relative;
+  height: 4px;
+  width: 100%;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.loader-bar {
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  background-color: var(--primary-color);
+  animation: slide 1.5s infinite ease-in-out;
+  border-radius: 2px;
+}
+
+@keyframes slide {
+  0% {
+    left: -40%;
+  }
+  50% {
+    left: 50%;
+    width: 60%;
+  }
+  100% {
+    left: 100%;
+    width: 40%;
+  }
 }
